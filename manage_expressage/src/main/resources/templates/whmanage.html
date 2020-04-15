@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+		<link rel="stylesheet" th:href="@{/css/whmanage.css}">
+		<link rel="stylesheet" th:href="@{/css/sousuo.css}">
+		<script th:src="@{/layui/layui.js}"></script>
+		<script type="text/javascript" th:src="@{/js/jquery-1.12.4.js}" ></script>
+		<script type="text/javascript" th:src="@{/js/whmanage.js}" ></script>
+	</head>
+	<body class="layui-layout-body">
+		<div class=" px-div-one">
+			<div class="px-div-one">
+				<span class="px-span px-span-head">
+					<h1><b>仓库管理</b></h1>
+				</span>
+				<span class="px-span px-span-headtwo">
+					<button type="button" class="layui-btn layui-btn-radius" id="save">
+						<h1><b>+</b></h1>
+					</button>
+				</span>
+			</div>
+			<div class="px-div-one">
+				<!--搜索栏-->
+				<span class="px-span px-span-head">
+				<div class="container px-div-one" style="border: 0px;">
+				    <div class="input px-div-one">
+				        <input id="title" type="text" placeholder="请输入要搜索的内容,搜索条件(编号，类型，面积，名称)" >
+				    </div>
+				    <input type="button" class="layui-btn layui-btn-radius search" id="searchBtn"></input>
+				</div>
+				</span>
+			</div>
+			<!--表格-->
+			<div class="px-div-one">
+				<table id="demo" lay-filter="test"></table>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$("#searchBtn").click(function(){
+			//获得搜索内容
+			var title = $("#title").val();
+			alert("要查询的内容是:"+title);
+		});
+		
+		
+	</script>
+	<!--仓库编号在这输出-->
+	<script type="text/html" id="username">
+	  <span class="layui-btn layui-btn-sm">CK.02</span>
+	</script>
+	<!--操作按钮-->
+	<script type="text/html" id="operation">
+	    
+		<div class="layui-inline" title="菜单" lay-event="commExport">
+	 		<a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+			<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+			<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+		</div>
+	</script>
+	
+</html>

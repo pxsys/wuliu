@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title></title>
+      <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+      <link rel="stylesheet" th:href="@{/css/my.css}">
+      <script th:src="@{/js/jquery-1.12.4.js}"></script>
+      <script th:src="@{/layui/layui.js}"></script>
+      <script>
+        //JavaScript代码区域
+        layui.use('element', function(){
+            var element = layui.element;
+
+        });
+      </script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="my-logo">
+    	<img src="imgs/物流.png" style="width: 50px; height: 50px;"/>
+    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	<span style="color: white;"><b style="font-size: 20px;">什 么 玩 意 物 流 系 统</b></span>
+    </div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+    	
+      <!--<li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>-->
+      
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          admin
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+        	&nbsp;&nbsp;
+        	<i class="layui-icon layui-icon-spread-left"></i>
+        	<button type="button" class="layui-btn layui-btn-radius">  在线  </button>
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="" class="layui-btn layui-btn-radius layui-btn-danger">  离线  </a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+      	
+      	<li class="layui-nav-item layui-nav-itemed">
+      		<a href="index.html">
+      			<i class="layui-icon layui-icon-home"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			<b>首页</b>
+      		</a>
+      	</li>
+        <li class="layui-nav-item">
+          <a class="" href="javascript:;">
+          	<i class="layui-icon layui-icon-template-1"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			企业数据
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="whmanage.html" target="right">仓库管理</a></dd>
+            <dd><a href="javascript:;" target="right">区域资料</a></dd>
+            <dd><a href="javascript:;" target="right">仓位资料</a></dd>
+            <dd><a href="javascript:;" target="right">车辆管理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-user"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			客户服务
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">客户资料</a></dd>
+            <dd><a href="javascript:;" target="right">订单录入</a></dd>
+            <dd><a href="javascript:;" target="right">订单跟踪</a></dd>
+            <dd><a href="javascript:;" target="right">订单接收</a></dd>
+            <dd><a href="javascript:;" target="right">订单处理</a></dd>
+            <dd><a href="javascript:;" target="right">客户签收</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-cart"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			采购管理
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">供应商</a></dd>
+            <dd><a href="javascript:;" target="right">采购申请</a></dd>
+            <dd><a href="javascript:;" target="right">采购订单</a></dd>
+            <dd><a href="javascript:;" target="right">订单发送</a></dd>
+            <dd><a href="javascript:;" target="right">到货接单</a></dd>
+            <dd><a href="javascript:;" target="right">到货通知</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-tabs"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			供应商管理
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">订单接收</a></dd>
+            <dd><a href="javascript:;" target="right">备货</a></dd>
+            <dd><a href="javascript:;" target="right">备货处理</a></dd>
+            <dd><a href="javascript:;" target="right">发货</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-addition"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			入库管理
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">入库接单</a></dd>
+            <dd><a href="javascript:;" target="right">入库装卸</a></dd>
+            <dd><a href="javascript:;" target="right">入库验货</a></dd>
+            <dd><a href="javascript:;" target="right">摆货作业</a></dd>
+            <dd><a href="javascript:;" target="right">入库确认</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-subtraction"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			出库管理
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">出库接单</a></dd>
+            <dd><a href="javascript:;" target="right">出库拣选</a></dd>
+            <dd><a href="javascript:;" target="right">出库装卸</a></dd>
+            <dd><a href="javascript:;" target="right">出库确认</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-templeate-1"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			库存管理
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">仓库检查</a></dd>
+            <dd><a href="javascript:;" target="right">物料报废</a></dd>
+            <dd><a href="javascript:;" target="right">物料检查</a></dd>
+            <dd><a href="javascript:;" target="right">库存盘点</a></dd>
+            <dd><a href="javascript:;" target="right">仓库检查单查询</a></dd>
+            <dd><a href="javascript:;" target="right">物料检查单查询</a></dd>
+            <dd><a href="javascript:;" target="right">库存盘点单查询</a></dd>
+            <dd><a href="javascript:;" target="right">库存查询</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-engine"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			配送运输
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">配送任务</a></dd>
+            <dd><a href="javascript:;" target="right">车辆调度</a></dd>
+            <dd><a href="javascript:;" target="right">配线管理</a></dd>
+            <dd><a href="javascript:;" target="right">出车管理</a></dd>
+            <dd><a href="javascript:;" target="right">回车管理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+          	<i class="layui-icon layui-icon-list"></i>
+      			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      			单据查询
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" target="right">采购申请 </a></dd>
+            <dd><a href="javascript:;" target="right">采购单查询</a></dd>
+            <dd><a href="javascript:;" target="right">到货通知单</a></dd>
+            <dd><a href="javascript:;" target="right">入库作业单</a></dd>
+            <dd><a href="javascript:;" target="right">配送任务单</a></dd>
+            <dd><a href="javascript:;" target="right">客户订单</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <iframe name="right" src="right.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+  </div>
+</div>
+
+</body>
+</html>

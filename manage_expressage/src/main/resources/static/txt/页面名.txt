@@ -1,0 +1,16 @@
+仓库管理：
+whmanage.html
+添加弹窗：
+save.html
+修改弹窗：
+update.html
+详情弹窗：
+detail.html
+首页：
+right.html
+主页
+index.html
+
+
+单词：
+操作   operation

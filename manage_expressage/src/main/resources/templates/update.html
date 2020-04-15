@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+    <script th:src="@{/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/js/whmanage.js}" ></script>
+    <style type="text/css">
+        tr,td,th{
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="margin-left: 100px;">
+<Br>
+
+
+    <Br>
+    <form class="layui-form" id="frm" action="">
+        <input type="hidden" name="id">
+         <div class="layui-form-item">
+            <label class="layui-form-label">仓库编号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="username" required  lay-verify="required" placeholder="仓库编号由系统生成" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">仓库名称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="sex" required  lay-verify="required" placeholder="仓库名称" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">仓库面积</label>
+            <div class="layui-input-inline">
+                <input type="text" name="city" required  lay-verify="required" placeholder="仓库面积" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+		    <label class="layui-form-label">仓库类型</label>
+		    <div class="layui-input-inline">
+		      <select name="sign" lay-filter="aihao">
+		        <option value="0">平方仓库</option>
+		        <option value="1" selected="">楼房仓库</option>
+		      </select>
+		    </div>
+		</div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地址</label>
+            <div class="layui-input-inline">
+                <input type="text" name="citys" required  lay-verify="required" placeholder="仓库地址" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">确认修改 </button>
+            </div>
+        </div>
+    </form>
+<script>
+    //Demo
+    layui.use(['form','jquery','layer'], function(){
+        var form = layui.form;
+        var $ = layui.$;
+        var layer  = layui.layer;
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+
+            $.ajax({
+                url:"/txt/whmanage.json",
+                type:"post",
+                data:$("#frm").serialize(),
+                success:function(data){
+                    //layer.msg("添加成功!");
+                    layer.alert("修改成功",function () {
+                        window.parent.location.reload();
+                    });
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+
+</body>
+</html>

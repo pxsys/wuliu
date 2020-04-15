@@ -1,0 +1,34 @@
+body{
+	margin: 10px;
+	padding: 10px;
+	font-family: '楷体';
+	background-color: #F0F8FF;
+}
+.px-div-one {
+	width: 100%;
+    border: 1px solid #C0C0C0;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+.px-div{
+	box-shadow:
+	inset 3px 3px 3px #888888,
+	3px 3px 3px #888888,
+	3px 3px 3px #888888,
+	3px 3px 3px #888888;
+}
+.px-span{
+	margin: 10px; 
+	padding: 10px;
+	display: inline-block;
+}
+.px-span-head{
+	float: left;
+	left: 30px;
+}
+.px-span-headtwo{
+	float: right;
+	right: 10px;
+}
+
