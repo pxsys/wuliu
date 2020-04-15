@@ -20,7 +20,7 @@
 <div class="layui-layout layui-layout-admin">
   <div class="layui-header">
     <div class="my-logo">
-    	<img src="imgs/物流.png" style="width: 50px; height: 50px;"/>
+    	<img th:src="@{/imgs/物流.png}" style="width: 50px; height: 50px;"/>
     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	<span style="color: white;"><b style="font-size: 20px;">什 么 玩 意 物 流 系 统</b></span>
     </div>
@@ -62,7 +62,7 @@
       <ul class="layui-nav layui-nav-tree"  lay-filter="test">
       	
       	<li class="layui-nav-item layui-nav-itemed">
-      		<a href="index.html">
+      		<a th:href="@{/forward/index}">
       			<i class="layui-icon layui-icon-home"></i>
       			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       			<b>首页</b>
@@ -75,7 +75,7 @@
       			企业数据
           </a>
           <dl class="layui-nav-child">
-            <dd><a href="whmanage.html" target="right">仓库管理</a></dd>
+            <dd><a th:href="@{/forward/whmanage}" target="right">仓库管理</a></dd>
             <dd><a href="javascript:;" target="right">区域资料</a></dd>
             <dd><a href="javascript:;" target="right">仓位资料</a></dd>
             <dd><a href="javascript:;" target="right">车辆管理</a></dd>
@@ -203,7 +203,7 @@
   
   <div class="layui-body">
     <!-- 内容主体区域 -->
-    <iframe name="right" src="right.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+    <iframe name="right" th:src="@{/forward/right}" style="width: 100%; height: 100%;" frameborder="0"></iframe>
   </div>
   
   <div class="layui-footer">

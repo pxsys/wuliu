@@ -15,7 +15,7 @@ layui.use(['table','layer','jquery'], function(){
     elem: '#demo'
     ,toolbar:"#toolbar0"
     ,height: 312
-    ,url: './txt/whmanage.json' //数据接口
+    ,url: '/txt/whmanage.json' //数据接口
     ,page: true //开启分页
     ,cols: [[ //表头
       {field: 'username', title: '仓库编号', width:"20%", sort: true,align:"center", fixed: 'left',templet:'#username'}
@@ -34,7 +34,7 @@ layui.use(['table','layer','jquery'], function(){
 			  type: 2,
 			  title:'<h1>添加仓库</h1>',
 			  shade: true, //模态窗
-			  area: ['600px','400px'],
+			  area: ['1150px','400px'],
 			  maxmin: false,
 			  anim:1,
 			  content: 'save.html',
@@ -60,7 +60,7 @@ layui.use(['table','layer','jquery'], function(){
 			  type: 2,
 			  title:'<h1>仓库详情</h1>',
 			  shade: true, //模态窗
-			  area: ['600px','400px'],
+			  area: ['1150px','400px'],
 			  maxmin: false,
 			  anim:1,
 			  content: 'detail.html',
@@ -84,7 +84,7 @@ layui.use(['table','layer','jquery'], function(){
 			  type: 2,
 			  title:'<h1>修改仓库信息</h1>',
 			  shade: true, //模态窗
-			  area: ['600px','400px'],
+			  area: ['1150px','400px'],
 			  maxmin: false,
 			  anim:1,
 			  content: 'update.html',
